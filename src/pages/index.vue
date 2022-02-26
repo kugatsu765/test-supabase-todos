@@ -1,64 +1,23 @@
-<script setup lang="ts">
-import { useUserStore } from '~/stores/user'
-
-const user = useUserStore()
-const name = ref(user.savedName)
-
-const router = useRouter()
-const go = () => {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-}
-
-const { t } = useI18n()
-</script>
-
 <template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-campsite inline-block />
-    </div>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
-    </p>
+  <div class="max-w-xl m-auto flex flex-col space-y-4 items">
+    <h1>My todos:</h1>
+    <FormCreateTodo @submited="getMyTodos()" />
 
-    <div py-4 />
+    <h2>En cours</h2>
+    <ViewTodos :todos="running" @toogle="toogleTodo" />
 
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x4 y2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button
-        btn m-3 text-sm
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
-      </button>
-    </div>
+    <h2>Done</h2>
+    <ViewTodos :todos="dones" @toogle="toogleTodo" />
   </div>
 </template>
+
+<script lang="ts" setup>
+const { running, dones, toogleTodo, getMyTodos } = useTodos()
+getMyTodos()
+</script>
 
 <route lang="yaml">
 meta:
   layout: home
+  requiresAuth: true
 </route>

@@ -4,9 +4,11 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Counter: typeof import('./components/Counter.vue')['default']
-    Footer: typeof import('./components/Footer.vue')['default']
-    README: typeof import('./components/README.md')['default']
+    Footer: typeof import('./components/app/Footer.vue')['default']
+    FormCreate: typeof import('./components/todos/FormCreateTodo.vue')['default']
+    FormLogin: typeof import('./components/auth/FormLogin.vue')['default']
+    Header: typeof import('./components/app/Header.vue')['default']
+    ViewTodos: typeof import('./components/todos/ViewTodos.vue')['default']
   }
 }
 

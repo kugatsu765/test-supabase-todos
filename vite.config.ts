@@ -42,6 +42,12 @@ export default defineConfig({
         'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
+        {
+          '~/composables': [
+            'useTodos',
+            'useAuth',
+          ],
+        },
       ],
       dts: 'src/auto-imports.d.ts',
     }),
@@ -82,8 +88,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'Todos',
+        short_name: 'Todos',
         theme_color: '#ffffff',
         icons: [
           {
