@@ -36,7 +36,15 @@ input {
 }
 
 button {
-  @apply bg-teal-500 p-2 px-4 rounded hover:(bg-opacity-25) transition-colors duration-350 shadow text-shadow;
+  @apply p-2 px-4 rounded hover:(bg-opacity-25) transition-colors duration-350 shadow text-shadow;
+}
+
+.btn-primary {
+  @apply bg-teal-500 text-white;
+}
+
+.btn-secondary {
+  @apply bg-gray-700 ;
 }
 
 h1 {

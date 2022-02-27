@@ -6,7 +6,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     Footer: typeof import('./components/app/Footer.vue')['default']
     FormCreate: typeof import('./components/todos/FormCreateTodo.vue')['default']
+    FormCreateTodo: typeof import('./components/todos/FormCreateTodo.vue')['default']
+    'FormCreateTodo copy': typeof import('./components/todos/FormCreateTodo copy.vue')['default']
     FormLogin: typeof import('./components/auth/FormLogin.vue')['default']
+    'FormLogin copy': typeof import('./components/auth/FormRegister.vue')['default']
+    FormRegister: typeof import('./components/auth/FormRegister.vue')['default']
     Header: typeof import('./components/app/Header.vue')['default']
     ViewTodos: typeof import('./components/todos/ViewTodos.vue')['default']
   }

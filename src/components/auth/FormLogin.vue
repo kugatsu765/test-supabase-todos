@@ -4,10 +4,10 @@
     @submit.prevent="submit"
   >
     <h1 class="font-bold m-0">
-      Login Form
+      Todo's App
     </h1>
 
-    <input id="login" v-model="login" name="login" placeholder="login" autocomplete="off">
+    <input id="login" v-model="login" name="login" placeholder="Your Mail" autocomplete="off">
     <input
       id="login"
       v-model="password"
@@ -17,7 +17,9 @@
       autocomplete="off"
     >
 
-    <button>Submit</button>
+    <button class="btn-primary">
+      Submit
+    </button>
   </form>
 </template>
 

@@ -6,7 +6,7 @@
       Todos app + supabase
     </div>
     <div>
-      <button class="flex flex-row items-center space-x-2" @click="signOutHandler">
+      <button class="btn-secondary flex flex-row items-center space-x-2" @click="signOutHandler">
         <div uim:signout />
         <div>Sign Out</div>
       </button>

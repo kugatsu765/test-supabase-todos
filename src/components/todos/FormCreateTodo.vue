@@ -9,7 +9,7 @@
         autocomplete="off"
         class="w-full"
       >
-      <button :disabled="!!errors.name">
+      <button class="btn-primary" :disabled="!!errors.name">
         Submit
       </button>
     </form>
@@ -37,5 +37,6 @@ const { value: name } = useField('name')
 const onSubmit = handleSubmit(async(values) => {
   await createTodo(values as { name: string })
   emit('submited', values)
+  name.value = ''
 })
 </script>
